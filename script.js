@@ -169,6 +169,10 @@
   });
 
   document.addEventListener("keydown", (event) => {
+    if (document.getElementById("contra-panel")?.classList.contains("is-open")) {
+      return;
+    }
+
     const { key } = event;
 
     if (/^[0-9]$/.test(key)) {

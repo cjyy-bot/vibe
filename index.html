@@ -79,6 +79,30 @@
     <p>© 2026 Mufasa · Built with HTML, CSS &amp; JS</p>
   </footer>
 
+  <div class="contra-widget" id="contra-widget">
+    <button
+      type="button"
+      class="contra-toggle"
+      id="contra-toggle"
+      aria-expanded="false"
+      aria-controls="contra-panel"
+      title="打开魂斗罗"
+    >
+      <span class="contra-toggle-icon" aria-hidden="true">▶</span>
+      <span>魂斗罗</span>
+    </button>
+
+    <div class="contra-panel" id="contra-panel" role="dialog" aria-label="魂斗罗小游戏">
+      <div class="contra-chrome">
+        <span class="contra-title">CONTRA · 魂斗罗</span>
+        <button type="button" class="contra-close" id="contra-close" aria-label="关闭游戏">×</button>
+      </div>
+      <canvas id="contra-canvas" width="320" height="200" tabindex="0"></canvas>
+      <p class="contra-hint" id="contra-hint">←→移动  ↑跳  ↓蹲  J射击</p>
+    </div>
+  </div>
+
   <script src="script.js"></script>
+  <script src="contra.js"></script>
 </body>
 </html>

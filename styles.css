@@ -318,6 +318,125 @@ main,
   font-size: 0.85rem;
 }
 
+/* Contra mini-game widget */
+.contra-widget {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 40;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  gap: 0.55rem;
+  font-family: var(--font-body);
+}
+
+.contra-toggle {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.65rem 0.95rem;
+  border: 1px solid rgba(61, 214, 195, 0.35);
+  border-radius: 999px;
+  background: rgba(22, 40, 36, 0.92);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.contra-toggle:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  background: rgba(26, 52, 46, 0.96);
+}
+
+.contra-toggle-icon {
+  color: var(--accent);
+  font-size: 0.7rem;
+}
+
+.contra-panel {
+  display: none;
+  width: min(calc(100vw - 2rem), 336px);
+  padding: 0.55rem;
+  border-radius: 16px;
+  background: rgba(12, 22, 20, 0.96);
+  border: 1px solid rgba(61, 214, 195, 0.22);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  animation: contra-pop 0.22s ease both;
+}
+
+.contra-panel.is-open {
+  display: block;
+}
+
+@keyframes contra-pop {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.contra-chrome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+  padding: 0 0.15rem;
+}
+
+.contra-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.contra-close {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.15rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.1rem 0.35rem;
+  border-radius: 6px;
+}
+
+.contra-close:hover {
+  color: var(--ink);
+  background: rgba(232, 242, 239, 0.08);
+}
+
+#contra-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  background: #0a1810;
+  image-rendering: pixelated;
+  outline: none;
+}
+
+.contra-hint {
+  margin: 0.45rem 0 0.1rem;
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
 @media (max-width: 560px) {
   .hero {
     padding-top: 3rem;
@@ -330,5 +449,10 @@ main,
 
   .calculator {
     width: 100%;
+  }
+
+  .contra-widget {
+    right: 0.65rem;
+    bottom: 0.65rem;
   }
 }
